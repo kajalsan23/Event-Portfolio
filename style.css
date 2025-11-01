@@ -14,15 +14,15 @@ body {
 .container {
     width: 85%;
     margin: 0 auto;
-    padding: 40px 0;
+    /* padding: 40px 0; */
 }
 
 /* Header and Navigation */
 header {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(21 21 20 / 90%);
     backdrop-filter: blur(10px);
     padding: 1.5rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -39,7 +39,7 @@ nav {
 .logo a {
     font-size: 2.5rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: linear-gradient(45deg, #dfae3a, #b2430a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Playfair Display', serif;
@@ -53,7 +53,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #e2be71;
     font-weight: 700;
     transition: color 0.3s ease;
     font-size: 1.1rem;
@@ -68,7 +68,7 @@ nav ul li a::after {
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: linear-gradient(45deg, #dfae3a, #b2430a);
     transition: width 0.4s ease;
 }
 
@@ -78,7 +78,8 @@ nav ul li a:hover::after {
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(45deg, rgba(106, 17, 203, 0.85), rgba(37, 117, 252, 0.85)), url('../events/assets/logo.jpeg') no-repeat center center/cover;
+    top: -50px;
+    background: linear-gradient(45deg, rgba(197, 203, 17, 0.85), rgba(160, 84, 22, 0.85)), url('../events/assets/logo.jpeg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     /* padding: 200px 0; */
@@ -114,7 +115,7 @@ nav ul li a:hover::after {
 /* Sections */
 section {
     /* padding: 100px 0; */
-    opacity: 0;
+    opacity: 1;
     transform: translateY(50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -126,7 +127,7 @@ section.scrolled {
 
 section h2 {
     text-align: center;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
     font-size: 4rem;
     font-family: 'Playfair Display', serif;
     position: relative;
@@ -140,7 +141,7 @@ section h2::after {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: linear-gradient(45deg, #dfae3a, #b2430a);
 }
 
 /* Founders Section */
@@ -250,21 +251,23 @@ section h2::after {
 /* Portfolio Section */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px; /* reduced from 100px */
+    height: 800px;
 }
 
 .gallery img {
     width: 100%;
-    height: auto;
+    height: 100px; /* fixed height to reduce tallness */
+    object-fit: cover; /* ensures image fills without distortion */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 /* Events Section */
@@ -296,7 +299,7 @@ section h2::after {
     height: auto; /* Let image keep its natural aspect ratio */
     max-height: 350px; /* Prevents overly tall images */
     object-fit: contain; /* Ensures full image is visible */
-    border-bottom: 3px solid #6a11cb; /* Optional style accent */
+    border-bottom: 3px solid  #dfae3a; /* Optional style accent */
     background-color: #f9f9f9; /* Adds a neutral background behind transparent images */
 }
 
@@ -313,14 +316,14 @@ section h2::after {
 /* Contact Section */
 #contact {
     text-align: center;
-    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    background: linear-gradient(45deg, #dfae3a, #b2430a);
     color: #fff;
 }
 
 .cta-button {
     display: inline-block;
     background-color: #fff;
-    color: #6a11cb;
+    color: #dfae3a;
     padding: 25px 50px;
     text-decoration: none;
     border-radius: 50px;
