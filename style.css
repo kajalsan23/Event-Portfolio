@@ -1,0 +1,388 @@
+/* General Body Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Header and Navigation */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    transition: width 0.4s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(45deg, rgba(106, 17, 203, 0.85), rgba(37, 117, 252, 0.85)), url('../events/assets/logo.jpeg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 200px 0;
+    position: relative;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+/* Founders Section */
+#founders {
+    background-color: #fff;
+}
+
+.founder-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.founder-card {
+    text-align: center;
+    width: 30%;
+}
+
+.founder-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.founder-card:hover img {
+    transform: scale(1.1);
+}
+
+.founder-card h3 {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.founder-card p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Services Section */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.card {
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+}
+
+.card:hover::before {
+    transform: rotate(360deg);
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.card.card-1 {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+}
+
+.card.card-2 {
+    background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+}
+
+.card.card-3 {
+    background: linear-gradient(45deg, #84fab0, #8fd3f4);
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Portfolio Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Events Section */
+#events {
+    background-color: #fff;
+}
+
+.event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.event-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 25px;
+}
+
+.event-details h3 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    color: #fff;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #6a11cb;
+    padding: 25px 50px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-size: 1.4rem;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    color: #2575fc;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1.5rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+}
